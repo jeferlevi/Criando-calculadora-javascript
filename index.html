@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div>
+        <input class="display">
+        <button class="gray-button" onclick="limpaTela()">AC</button>
+        <button class="gray-button" onclick="inverterNumero()">+/-</button>
+        <button class="blue-button"onclick="adcionarCaracter('/')">/</button>
+        <button class="blue-button"onclick="adcionarCaracter('*')">*</button>
+        <button class="black-button"onclick="adcionarCaracter('7')">7</button>
+        <button class="black-button"onclick="adcionarCaracter('8')">8</button>
+        <button class="black-button"onclick="adcionarCaracter('9')">9</button>
+        <button class="blue-button"onclick="adcionarCaracter('-')">-</button>
+        <button class="black-button"onclick="adcionarCaracter('4')">4</button>
+        <button class="black-button"onclick="adcionarCaracter('5')">5</button>
+        <button class="black-button"onclick="adcionarCaracter('6')">6</button>
+        <button class="blue-button"onclick="adcionarCaracter('+')">+</button>
+        <button class="black-button" onclick="adcionarCaracter('1')">1</button>
+        <button class="black-button"onclick="adcionarCaracter('2')">2</button>
+        <button class="black-button"onclick="adcionarCaracter('3')">3</button>
+        <button class="equal-button equal" onclick="calcular()">=</button>
+        <button class="black-button zero"onclick="adcionarCaracter('0')">0</button>
+        <button class="black-button"onclick="adcionarCaracter('.')">.</button>
+
+
+
+
+
+
+    </div>
+</body>
+<script>
+    function adcionarCaracter(Caracter) {
+        const valorDisplay = document.querySelector(".display").value
+
+        document.querySelector(".display").value = valorDisplay + Caracter
+    }
+
+    function limpaTela(){
+           document.querySelector(".display").value = ""
+    }
+    function calcular(){
+        const valorDisplay = document.querySelector(".display").value
+
+        document.querySelector(".display").value = eval(valorDisplay)
+    }
+    function inverterNumero(){
+        const valorDisplay = document.querySelector(".display").value
+         document.querySelector(".display").value = valorDisplay * -1
+    }
+</script>
+
+
+</html>
